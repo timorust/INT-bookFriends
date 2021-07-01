@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "ng-class-book"
+  },
+  "targets": {
+    "ng-class-book": {
+      "hosting": {
+        "classbook": [
+          "ng-class-book"
+        ]
+      }
+    }
+  }
+}
