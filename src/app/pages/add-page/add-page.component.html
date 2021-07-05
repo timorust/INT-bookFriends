@@ -1,1 +1,51 @@
-<p>add-page works!</p>
+<form (ngSubmit)="saveNewStudent()" [formGroup]="studentForm" *ngIf="user; else noUserTemplate">
+
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" [value]="user?.displayName" readonly>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" [value]="user?.email" readonly>
+  </div>
+
+  <div>
+    <label for="title">Job Title</label>
+    <input type="text" id="title" [formControl]="getTitle">
+  </div>
+
+  <div>
+    <label for="info">Info</label>
+    <textarea name="info" maxlength="500" [formControl]="getInfo" id="info" rows="10"></textarea>
+    <span>Max: {{getInfo.value?.length}}/500</span>
+  </div>
+
+  <div>
+    <label for="github">Github</label>
+    <input type="text" id="github" [formControl]="getGithub">
+  </div>
+
+  <div>
+    <label for="facebook">Facebook</label>
+    <input type="text" id="facebook" [formControl]="getFacebook">
+  </div>
+
+  <div>
+    <label for="codepen">Codepen</label>
+    <input type="text" id="codepen" [formControl]="getCodepen">
+  </div>
+  <div>
+    <label for="linkedin">Linkedin</label>
+    <input type="text" id="linkedin" [formControl]="getGithub">
+  </div>
+
+
+  <button type="submit">Save New Student</button>
+</form>
+
+<ng-template #noUserTemplate>
+
+  Please login to add a student
+
+</ng-template>

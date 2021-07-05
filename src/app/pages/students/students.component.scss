@@ -1,0 +1,64 @@
+.students-gallery {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+
+
+  .students-card {
+    padding: 1rem;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0);
+    transition: box-shadow 300ms;
+    border-radius: 8px;
+    background: #f8f8fc;
+
+    &:hover {
+      box-shadow: 0 10px 15px 0 rgba(0,0,0, .25);
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 16px;
+      opacity: .5;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 35px 1fr;
+      gap: 15px;
+      border-bottom: 1px solid rgba(0,0,0, .66);
+      padding-bottom: 10px;
+
+      img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+      }
+    }
+
+    p {
+      margin: 1rem 0 .6rem 0;
+      word-break: break-word;
+    }
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+
+    a {
+      color: currentColor;
+    }
+
+  }
+}

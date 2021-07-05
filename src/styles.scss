@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after { box-sizing: border-box }
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+body {
+  font-family: 'Hammersmith One', sans-serif
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+button {
+  border: 0;
+  padding: 1rem;
+  background-color: rgba(18,85,455, .65);
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 300ms;
+
+  &:hover {
+    background-color: rgba(18,85,455, 1);
+  }
+}

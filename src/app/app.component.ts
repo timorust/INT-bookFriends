@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     }
     this.userSub = this.authService.user.subscribe(async (userDoc: UserInterface | undefined | null) => {
       if(userDoc === undefined) {
-        await this.authService.createUserDoc(auth);
+        await this.authService.createUserDoc(auth.user);
       }
       else {
         this.user = userDoc;

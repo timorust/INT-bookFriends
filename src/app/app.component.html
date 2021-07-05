@@ -2,7 +2,7 @@
   <header>
     <h1 routerLink="/">INT Classbook</h1>
     <div>
-      <span>Hi{{user?.displayName}}</span>
+      <span>Hi {{user?.displayName}}</span>
       <button *ngIf="!user" (click)="logIn()">Log In</button>
       <button *ngIf="user" (click)="logOut()">Log Out</button>
     </div>

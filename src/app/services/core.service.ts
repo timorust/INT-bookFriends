@@ -9,7 +9,7 @@ export class CoreService {
 
   constructor(private afs: AngularFirestore) { }
 
-  saveStudent(student: StudentInterface) {
+  saveStudent(student: StudentInterface): any {
     return this.afs.collection('students').add(student);
   }
 
