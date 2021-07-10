@@ -4,25 +4,23 @@ service cloud.firestore {
 
     match /users/{userId} {
       allow get;
-      allow create: if isSigneIn() && isNotExist();
-      allow update: if request.auth.uid == userId &&
-                       request.resource.data == resource.data;
+      allow create: if isSigneIn();
+      allow update: if request.auth.uid;
+
     }
 
     match /posts/{postId} {
+      allow write;
       allow read;
-      allow create: if isSigneIn() && isNotExist();
+      allow create: if isSigneIn();
       allow update: if isSigneIn();
       allow delete: if isSigneIn() && request.auth.uid == resource.data.userId;
     }
 
 
+
     function isSigneIn() {
       return request.auth != null;
-    }
-
-    function isNotExist() {
-      return resource == null;
     }
 
   }
